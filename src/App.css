@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pokemonName {
+  margin-bottom: 0;
+}
+
+.pokePic {
+  width: 90px; 
+  height: 90px; 
+  object-fit: cover;
+}
+
+.pokemonSprite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowButton {
+  background-color: #cacaca;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 40px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.pokeStats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.pokemonGames, .pokemonMoves {
+  font-size: 18px;
+}
+
+.tableWrapper {
+  width: 80%;
+  margin: auto;
+  background-color: #282c34;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.pokemonMoves table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pokemonMoves th, .pokemonMoves td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  white-space: nowrap;
+  padding: 15px;
+}
+
+.pokemonMoves tr:nth-child(even) {
+  background-color: #404448;
+}
+
+.pokemonMoves th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #707070;
+  color: white;
+}
