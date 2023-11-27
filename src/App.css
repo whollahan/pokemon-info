@@ -132,3 +132,52 @@
   background-color: #707070;
   color: white;
 }
+
+@media (max-width: 600px) {
+  .App-logo {
+    height: 15vmin;
+  }
+
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+
+  .pokePic {
+    width: 70px; 
+    height: 70px; 
+  }
+
+  .arrowButton {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 2px 20px;
+  }
+
+  .pokeStats {
+    font-size: 13px;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 14px;
+    margin: 2px 1px;
+  }
+
+  .pokemonGames, .pokemonMoves {
+    font-size: 16px;
+  }
+
+  .tableWrapper {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .pokemonMoves th, .pokemonMoves td {
+    padding: 7px;
+  }
+
+  .pokemonMoves th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

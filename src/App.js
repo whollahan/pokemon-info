@@ -2,10 +2,12 @@ import logo from './newHutao8.png';
 import './App.css';
 import Pokedex from 'pokedex-promise-v2';
 import { Fragment, useEffect, useState } from 'react';
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, IconButton, Drawer, List, ListItem, ListItemText, Menu, TextField } from '@mui/material';
+import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, IconButton, Drawer, List, ListItem, ListItemText, Menu, TextField, Box } from '@mui/material';
 import StarBorder from '@mui/icons-material/StarBorder';
 import Star from '@mui/icons-material/Star';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function App() {
   const [pokemon, setPokemon] = useState('')
@@ -21,6 +23,9 @@ function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
   const [invalidPokemon, setInvalidPokemon] = useState(false);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     createSpritesArray()
@@ -162,24 +167,38 @@ function App() {
               </div>
               {showMoves && (
                 <>
-                  <Typography style={{ marginBottom: '40px', marginTop: '40px' }} variant="h4">{chosenPokemon.moves[currentMoveIndex].move.name.charAt(0).toUpperCase() + chosenPokemon.moves[currentMoveIndex].move.name.slice(1)}</Typography>
-                  <TableContainer component={Paper} style={{ backgroundColor: '#f5f5f5', marginBottom: '40px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(0 0 0)', padding: '10px 0', width: '100%' }}>
-                      <Table className="pokemonMoves" style={{ width: '98%' }}>
+                  <Typography style={{ marginBottom: isMobile ? '20px' : '40px', marginTop: isMobile ? '20px' : '40px' }} variant="h4">
+                    {chosenPokemon.moves[currentMoveIndex].move.name.charAt(0).toUpperCase() + chosenPokemon.moves[currentMoveIndex].move.name.slice(1)}
+                  </Typography>
+                  <TableContainer component={Paper} style={{ backgroundColor: '#f5f5f5', marginBottom: isMobile ? '20px' : '40px' }}>
+                    <div style={{ maxHeight: '400px', overflow: 'auto' }}>
+                      <Table className="pokemonMoves" style={{ minWidth: '100%' }}>
                         <TableHead>
                           <TableRow style={{ backgroundColor: '#3f51b5' }}>
-                            <TableCell style={{ color: '#fff' }}>Game</TableCell>
-                            <TableCell style={{ color: '#fff' }}>Level Learned At</TableCell>
-                            <TableCell style={{ color: '#fff' }}>Move Learn Method</TableCell>
+                            <TableCell style={{ color: '#fff' }}>
+                              <Box style={{ overflowX: 'auto', maxWidth: isMobile ? '100px' : 'auto' }}>Game</Box>
+                            </TableCell>
+                            <TableCell style={{ color: '#fff' }}>
+                              <Box style={{ overflowX: 'auto', maxWidth: isMobile ? '100px' : 'auto' }}>Level</Box>
+                            </TableCell>
+                            <TableCell style={{ color: '#fff' }}>
+                              <Box style={{ overflowX: 'auto', maxWidth: isMobile ? '100px' : 'auto' }}>Method</Box>
+                            </TableCell>
                           </TableRow>
                         </TableHead>
                         <TableBody>
                           {chosenPokemon.moves[currentMoveIndex].version_group_details.map((detail, index) => (
                             <TableRow key={index} style={{ backgroundColor: index % 2 === 0 ? '#e0e0e0' : '#fff' }}>
-                              <TableCell>{detail.version_group.name}</TableCell>
-                              <TableCell>{detail.level_learned_at}</TableCell>
-                              <TableCell>{detail.move_learn_method.name.charAt(0).toUpperCase() + detail.move_learn_method.name.slice(1)}</TableCell>
-                            </TableRow>
+                            <TableCell style={{ width: '10%' }}>
+                              <Box style={{ overflowX: 'auto', width: '100%' }}>{detail.version_group.name}</Box>
+                            </TableCell>
+                            <TableCell>
+                              <Box style={{ overflowX: 'auto', width: '100%' }}>{detail.level_learned_at}</Box>
+                            </TableCell>
+                            <TableCell>
+                              <Box style={{ overflowX: 'auto', width: '100%' }}>{detail.move_learn_method.name.charAt(0).toUpperCase() + detail.move_learn_method.name.slice(1)}</Box>
+                            </TableCell>
+                          </TableRow>
                           ))}
                         </TableBody>
                       </Table>
