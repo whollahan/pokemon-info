@@ -36,8 +36,8 @@
 }
 
 .pokePic {
-  width: 90px; 
-  height: 90px; 
+  width: 300px; 
+  height: 300px; 
   object-fit: cover;
 }
 
@@ -143,8 +143,8 @@
   }
 
   .pokePic {
-    width: 70px; 
-    height: 70px; 
+    width: 150px; 
+    height: 185px; 
   }
 
   .arrowButton {
