@@ -33,12 +33,8 @@ function App() {
 
   useEffect(() => {
     setIsFavorited(favorites.some(pokemon => pokemon.name === chosenPokemon.name));
-    console.log('favs', favorites)
+    // console.log('favs', favorites)
   }, [favorites, chosenPokemon]);
-
-  useEffect(() => {
-    console.log('pic', spritesArray[index])
-  }, [index])
 
   const flattenSprites = (sprites) => {
     let result = [];
@@ -59,12 +55,12 @@ function App() {
     try {
       P.getPokemonByName(pokemon)
         .then((res) => {
-          console.log('pokemon info', res)
+          // console.log('pokemon info', res)
           setChosenPokemon(res);
           setSpritesArray(flattenSprites(res.sprites)); // Flatten sprites object into array
         })
         .catch((err) => {
-          console.log('pokemon doesnt exist');
+          // console.log('pokemon doesnt exist');
           setInvalidPokemon(true)
           setChosenPokemon(null);
         });
@@ -75,7 +71,7 @@ function App() {
 
   const createSpritesArray = async () => {
     let sprites = Object.entries(pokeSprites).map(([k, v]) => ({ v }))
-    console.log('spritesaaa', sprites)
+    // console.log('spritesaaa', sprites)
     setSpritesArray(sprites)
   }
 
