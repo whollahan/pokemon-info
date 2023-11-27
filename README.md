@@ -8,7 +8,7 @@ Browse Pokemon Images: The application fetches all available images of the Pokem
 Favorite Pokemon: Click the star next to a Pokemon's name to add it to your favorites. Click the star again to remove it from your favorites.
 View Favorites: Click the hamburger menu at the top right of the screen to view your favorited Pokemon. Click a Pokemon in the list to view its details.
 ### Installation
-Clone this repository: git clone https://github.com/yourusername/pokemon-pokedex.git
+Clone this repository: git clone https://github.com/whollahan/pokemon-info.git
 Install the dependencies: npm install
 Start the application: npm start
 ### Usage
