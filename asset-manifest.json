@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pokemon-info/static/css/main.821210ad.css",
+    "main.css": "/pokemon-info/static/css/main.c358b542.css",
     "main.js": "/pokemon-info/static/js/main.9a56298f.js",
     "static/js/787.2e03e12c.chunk.js": "/pokemon-info/static/js/787.2e03e12c.chunk.js",
     "static/media/newHutao8.png": "/pokemon-info/static/media/newHutao8.3afd58d73c20b85fce8e.png",
     "index.html": "/pokemon-info/index.html",
-    "main.821210ad.css.map": "/pokemon-info/static/css/main.821210ad.css.map",
+    "main.c358b542.css.map": "/pokemon-info/static/css/main.c358b542.css.map",
     "main.9a56298f.js.map": "/pokemon-info/static/js/main.9a56298f.js.map",
     "787.2e03e12c.chunk.js.map": "/pokemon-info/static/js/787.2e03e12c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.821210ad.css",
+    "static/css/main.c358b542.css",
     "static/js/main.9a56298f.js"
   ]
 }
