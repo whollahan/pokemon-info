@@ -117,7 +117,7 @@ function App() {
         </Drawer>
         <img src={logo} className="App-logo" alt="logo" />
         <div className="pokeStuff">
-          <h1>Search a Pokemon to see information about them.</h1>
+          <h1>Search a Pokemon to see information about them or look at a random one.</h1>
           <TextField
             type="text"
             value={pokemon}
@@ -132,6 +132,14 @@ function App() {
             style={{ backgroundColor: '#3f51b5', color: '#fff' }}
           >
             Submit
+          </Button>
+          <Button
+            id="pokemonButton"
+            onClick={() => handlePokemonData(Math.floor(Math.random() * 1016) + 1)}
+            variant="contained"
+            style={{ backgroundColor: '#3f51b5', color: '#fff', marginLeft: '20px' }}
+          >
+            Random
           </Button>
 
           {invalidPokemon ? <p style={{ color: 'red' }}>Please enter a valid pokemon.</p> : null}
