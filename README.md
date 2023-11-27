@@ -1,3 +1,6 @@
+### Sample Web Page
+https://whollahan.github.io/pokemon-info/
+
 ### Pokemon Pokedex
 This project is a simple Pokedex application built with React and Material-UI. It uses the PokeAPI to fetch data about different Pokemon.
 
